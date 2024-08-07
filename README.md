@@ -1,0 +1,5 @@
+#　ｇｃｐ-workflow-terraform-github
+
+これはGCPにgithub actionを設定して、後続のterraformの処理を通すために作成されます。
+
+なので本リポジトリではgithub actionを使わずにそのままローカルで実行するのが基本的な使い方です。
