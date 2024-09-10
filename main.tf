@@ -6,7 +6,7 @@ provider "google" {
 
 # APIの有効化
 module "service" {
-  source     = "./modules/service"
+  source     = "./module/service"
   project_id = var.project_id
 }
 
@@ -15,7 +15,7 @@ resource "random_id" "pool_id_suffix" {
 }
 
 module "workload_identity" {
-  source     = "./modules/workload_identity"
+  source     = "./module/workload_identity"
   project_id = var.project_id
   region     = var.region
   pool_id    = "my-pool-${random_id.pool_id_suffix.hex}"
@@ -26,7 +26,7 @@ module "workload_identity" {
 }
 
 module "iam" {
-  source     = "./modules/iam"
+  source     = "./module/iam"
   project_id = var.project_id
   region     = var.region
   pool_id    = module.workload_identity.workload_identity_provider_pool.name
