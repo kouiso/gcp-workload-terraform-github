@@ -1,0 +1,4 @@
+setup:
+  install: "terraform init"
+  test: "terraform plan"
+  lint: "terraform validate"
